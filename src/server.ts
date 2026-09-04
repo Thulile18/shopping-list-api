@@ -7,7 +7,6 @@
 // alongside the Item type in models/item.ts.
 
 import * as http from "http";
-import { randomUUID } from "crypto";
 import { Item, CreateItemInput, UpdateItemInput } from "./models/item";
 
 const PORT = 3000;
@@ -21,15 +20,17 @@ const PORT = 3000;
 // and the list resets - that's expected for this project.
 
 const items: Item[] = [];
+let nextId = 1; // simple counter - each new item gets the next number, starting at 1
 
 function addItem(input: CreateItemInput): Item {
   const newItem: Item = {
-    id: randomUUID(),
+    id: String(nextId),
     name: input.name,
     quantity: input.quantity,
     purchased: false,
     createdAt: new Date().toISOString(),
   };
+  nextId++;
   items.push(newItem);
   return newItem;
 }
