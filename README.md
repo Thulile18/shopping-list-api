@@ -1,4 +1,10 @@
 Shopping List API
+
+Project Image:
+
+<img src="https://socialify.git.ci/Thulile18/shopping-list-api/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="shopping-list-api" width="640" height="320" />
+
+
 A simple REST API for managing a shopping list, built with Node.js and TypeScript using only Node's built-in `http` module (no Express or other frameworks). Items are stored in memory, so the list resets whenever the server restarts.
 Project structure
 ```
